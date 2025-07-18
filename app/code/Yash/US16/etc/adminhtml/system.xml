@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="mod16" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Mod 16</label>
+            <tab>mod9</tab>
+            <resource>Yash_US16::acl_rule</resource>
+            <group id="design" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Design</label>
+                <field id="color_picker" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Pick a color</label>
+                    <source_model>Yash\US16\Model\Config\Source\ColorOptions</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

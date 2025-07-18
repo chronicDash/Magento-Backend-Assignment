@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page layout="3columns"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="yash.us7.left.sidebar"
+                   template="Yash_US7::left-sidebar.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.main">
+            <block class="Yash\US7\Block\Message"
+                   name="Yash_US7_Message"
+                   template="Yash_US7::index.phtml"
+                   before="product.info.price"/>
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="yash.us7.right.sidebar"
+                   template="Yash_US7::right-sidebar.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,10 @@
+<?php
+/** @var \Yash\US24\Block\Data $block */
+$data = $block->getJsConfig();
+?>
+
+<div
+    data-mage-init='{
+        "Yash_US24/js/config-logger": <?= json_encode($data) ?>
+    }'>
+</div>

@@ -1,0 +1,17 @@
+<?php
+/** @var \Magento\Catalog\Model\Product $product */
+$product = $block->getLayout()->getBlock('product.info')->getProduct();
+
+if ($product->isSalable()): ?>
+    <div class="actions">
+        <button type="submit" title="<?= __('Add to Cart') ?>" class="action primary tocart">
+            <span><?= __('Add to Cart') ?></span>
+        </button>
+    </div>
+<?php else: ?>
+    <div class="actions">
+        <a href="<?= $block->getUrl('contact') ?>" class="action primary call-for-availability">
+            <span><?= __('Call For Availability') ?></span>
+        </a>
+    </div>
+<?php endif; ?>
