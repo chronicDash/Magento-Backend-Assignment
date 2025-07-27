@@ -1,0 +1,33 @@
+<?php
+/** @var \Magento\Catalog\Model\Product\Option $option */
+$option = $block->getOption();
+$optionId = $option->getId();
+$optionName = $option->getTitle();
+?>
+<div class="field custom-textarea" id="custom-textarea-<?php echo $optionId ?>">
+    <label for="custom_option_<?php echo $optionId ?>"><?php echo $block->escapeHtml($optionName) ?></label>
+    <textarea id="custom_option_<?php echo $optionId ?>" 
+              name="options[<?php echo $optionId ?>]" 
+              rows="4" 
+              maxlength="200" 
+              class="custom-textarea-limit input-text"
+              data-option-id="<?php echo $optionId ?>"></textarea>
+    <div class="char-counter" id="char-counter-<?php echo $optionId ?>">0/200 characters</div>
+    <div class="char-error" id="char-error-<?php echo $optionId ?>" style="color:red; display:none;">TraineeName has reached character limit</div>
+</div>
+
+<script type="text/javascript">
+require(['jquery'], function($) {
+    $('#custom_option_<?php echo $optionId ?>').on('input', function() {
+        let val = $(this).val();
+        let count = val.length;
+        $('#char-counter-<?php echo $optionId ?>').text(count + '/200 characters');
+        if (count >= 200) {
+            $('#char-error-<?php echo $optionId ?>').show();
+            $(this).val(val.substring(0, 200));
+        } else {
+            $('#char-error-<?php echo $optionId ?>').hide();
+        }
+    });
+});
+</script>

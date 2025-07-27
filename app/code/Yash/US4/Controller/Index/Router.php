@@ -4,12 +4,15 @@ namespace Yash\US4\Controller;
 use Magento\Framework\App\ActionFactory;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\RouterInterface;
+use Yash\US4\Logger\Logger;
 
 class Router implements RouterInterface
 {
     protected $actionFactory;
 
-    public function __construct(ActionFactory $actionFactory)
+    public function __construct(
+        ActionFactory $actionFactory,
+        private readonly Logger $logger)
     {
         $this->actionFactory = $actionFactory;
     }
@@ -28,7 +31,7 @@ class Router implements RouterInterface
             $request->setActionName($action);
             $request->setAlias(\Magento\Framework\UrlInterface::REWRITE_REQUEST_PATH_ALIAS, $path);
 
-            return $this->actionFactory->create('Magento\Framework\App\Action\Forward');
+            return $this->actionFactory->create('Magento\Framework\App\Action\Redirect');
         }
 
         return null;

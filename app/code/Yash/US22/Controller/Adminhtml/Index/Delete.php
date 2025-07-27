@@ -1,8 +1,7 @@
 <?php
 namespace Yash\US22\Controller\Adminhtml\Index;
 
-use Magento\Framework\Controller\Result\RedirectFactory;
-use Magento\Framework\Controller\ResultFactory;
+
 use Magento\Framework\Exception\NoSuchEntityException;
 use Yash\US22\Service\PopupRepository;
 
